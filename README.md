@@ -1,6 +1,6 @@
 # imagecrop.koplugin
 
-A [KOReader](https://github.com/koreader/koreader) plugin that adds interactive crop functionality to the built-in Image Viewer. Select any rectangular region of an image with two taps, fine-tune it with arrow controls, and save the result as a PNG — or pin it directly to [pinnedelements.koplugin](#integration-with-pinnedelementskoplugin).
+A [KOReader](https://github.com/koreader/koreader) plugin that adds interactive crop functionality to the built-in Image Viewer. Select any rectangular region of an image with two taps, fine-tune it with arrow controls, and save the result as a PNG — or pin it directly to [pinnedelements.koplugin](https://github.com/DHaizon/pinnedelements.koplugin).
 
 > Built with vibecoding using [Claude](https://claude.ai) (Anthropic).
 
@@ -12,7 +12,7 @@ A [KOReader](https://github.com/koreader/koreader) plugin that adds interactive 
 - **Visual overlay** — a high-contrast black/white border with L-shaped corner markers makes the selection clearly visible on E-ink screens.
 - **Pixel-nudge navigation bar** — once a selection is active, a `◄ ▲ ▼ ►` bar appears above the action buttons to shift the entire selection one pixel at a time for precise adjustments.
 - **Crop & Save** — saves the selected region as a PNG file next to the source image (`<original_name>_crop_YYYYMMDD_HHMMSS.png`). Falls back to `koreader/screenshots/` if no source path is available.
-- **Pin to PinnedElements** — crops the selection in memory and saves it directly as a pinned image entry in [pinnedelements.koplugin](https://github.com/your-username/pinnedelements.koplugin), without saving a separate file first (see [below](#integration-with-pinnedelementskoplugin)).
+- **Pin to PinnedElements** — crops the selection in memory and saves it directly as a pinned image entry in [pinnedelements.koplugin](https://github.com/DHaizon/pinnedelements.koplugin), without saving a separate file first (see [below](#integration-with-pinnedelementskoplugin)).
 - **Reset / Cancel** — reset clears the current selection so you can start over; cancel exits crop mode and restores the Image Viewer to its original state.
 - **Non-destructive** — original images are never modified.
 - **Kindle Paperwhite compatible** — grayscale-safe PNG output via `BlitBuffer → TYPE_BBRGB32 → writePNG`.
@@ -60,7 +60,7 @@ After saving, a dialog shows the full output path with a **View** button to open
 
 ## Integration with pinnedelements.koplugin
 
-[pinnedelements.koplugin](https://github.com/your-username/pinnedelements.koplugin) is a companion plugin that lets you pin pages, text selections, and images to a persistent popup while reading. When it is installed alongside `imagecrop.koplugin`, the **Pin** button in the crop overlay becomes fully functional, turning any cropped region into a pinned image entry without any extra steps.
+[pinnedelements.koplugin](https://github.com/DHaizon/pinnedelements.koplugin) is a companion plugin that lets you pin pages, text selections, and images to a persistent popup while reading. When it is installed alongside `imagecrop.koplugin`, the **Pin** button in the crop overlay becomes fully functional, turning any cropped region into a pinned image entry without any extra steps.
 
 ### What happens when you tap Pin
 
@@ -128,7 +128,7 @@ If you have [filebrowserplus.koplugin](https://github.com/patelneeraj/filebrowse
 koreader/plugins/
 └── imagecrop.koplugin/
     ├── main.lua
-    └── _meta.lua        (optional, for plugin metadata)
+    └── _meta.lua
 ```
 
 ---
